@@ -1,15 +1,15 @@
-{
+﻿{
   "name": "employee-management-system-frontend",
   "displayName": "Employee Management System Frontend",
   "version": "1.1.0",
-  "author": "Son Nguyen",
+  "author": "Umair Ansari",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hoangsonww/Employee-Management-Fullstack-App.git"
+    "url": "git+https://github.com/UmairAnsari/Employee-Management-Fullstack-App.git"
   },
   "bugs": {
-    "url": "https://github.com/hoangsonww/Employee-Management-Fullstack-App/issues"
+    "url": "https://github.com/UmairAnsari/Employee-Management-Fullstack-App/issues"
   },
   "homepage": "/",
   "description": "The frontend of the Employee Management Fullstack App",
@@ -75,3 +75,4 @@
     "tailwindcss": "^3.4.10"
   }
 }
+

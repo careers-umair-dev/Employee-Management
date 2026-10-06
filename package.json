@@ -1,4 +1,4 @@
-{
+﻿{
   "name": "employee-management-app",
   "version": "1.0.1",
   "description": "Employee Management App",
@@ -38,12 +38,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hoangsonww/Employee-Management-Fullstack-App.git",
+    "url": "git+https://github.com/UmairAnsari/Employee-Management-Fullstack-App.git",
     "directory": "Employee-Management-Fullstack-App"
   },
   "bugs": {
-    "url": "https://github.com/hoangsonww/Employee-Management-Fullstack-App/issues",
-    "email": "hoangson091104@gmail.com"
+    "url": "https://github.com/UmairAnsari/Employee-Management-Fullstack-App/issues",
+    "email": "umair.ansari@example.com"
   },
   "keywords": [
     "Employee",
@@ -53,6 +53,7 @@
     "Management",
     "App"
   ],
-  "author": "Son Nguyen",
+  "author": "Umair Ansari",
   "license": "MIT"
 }
+

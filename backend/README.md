@@ -1,4 +1,4 @@
-# Employee Management System - Backend
+﻿# Employee Management System - Backend
 
 ## Overview
 
@@ -10,7 +10,7 @@ The backend of the Employee Management System is built using Spring Boot, a powe
 - **DTO Pattern**: Request and response DTOs decouple the API contract from JPA entities, preventing circular serialization and data leakage.
 - **Bean Validation**: All request inputs are validated with `@NotBlank`, `@Email`, `@Min`, `@Max`, `@NotNull` annotations.
 - **Global Exception Handling**: Centralized `@RestControllerAdvice` handles validation errors (400), not found (404), data integrity violations (400), malformed JSON (400), auth errors (401/403), and generic exceptions (500). No stack traces are leaked.
-- **Data Initialization**: Seeds sample data on first startup only (idempotent — skips if data exists).
+- **Data Initialization**: Seeds sample data on first startup only (idempotent â€” skips if data exists).
 - **Integration**: Connects to both MySQL and MongoDB databases.
 - **JWT Authentication**: Token-based auth with externalized secret (`JWT_SECRET` env var). Invalid/expired tokens are handled gracefully.
 - **Passkeys (WebAuthn/FIDO2)**: Passwordless, phishing-resistant sign-in via the Yubico `java-webauthn-server` library. Users can register multiple passkeys, log in with them, and manage (list/rename/delete) them. Only passkey-management routes require a JWT; passkey login is public.
@@ -84,7 +84,7 @@ mindmap
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/hoangsonww/Employee-Management-Fullstack-App.git
+git clone https://github.com/UmairAnsari/Employee-Management-Fullstack-App.git
 cd Employee-Management/backend
 ```
 
@@ -112,7 +112,7 @@ MONGO_URI=mongodb://localhost:27017/employee_management
 # JWT Secret (required - generate with: openssl rand -base64 32)
 JWT_SECRET=your-secret-key-here
 
-# Passkeys / WebAuthn — rp-id MUST match the domain the frontend is served from (no scheme/port)
+# Passkeys / WebAuthn â€” rp-id MUST match the domain the frontend is served from (no scheme/port)
 WEBAUTHN_RP_ID=localhost
 WEBAUTHN_RP_NAME=Employee Management System
 WEBAUTHN_ALLOWED_ORIGINS=http://localhost:3000,http://localhost:8080
@@ -208,7 +208,7 @@ Here are some example API endpoints you can use to interact with the backend:
 
 `config/DataInitializer.java` automatically runs on backend startup.
 
-It is **idempotent** — it only seeds data if the database is empty:
+It is **idempotent** â€” it only seeds data if the database is empty:
 
 - If `departments` table has data, seeding is skipped entirely
 - On a fresh database, it inserts 50 fake departments and 295 fake employees
@@ -230,42 +230,42 @@ The main class that serves as the entry point for the Spring Boot application.
 
 ### Controllers (`controller/`)
 
-- `EmployeeController.java` — REST endpoints for employee CRUD. Accepts `EmployeeRequestDto`, returns `EmployeeResponseDto`.
-- `DepartmentController.java` — REST endpoints for department CRUD. Accepts `DepartmentRequestDto`, returns `DepartmentResponseDto`. Rejects deleting departments that still have employees (409 Conflict).
-- `AuthController.java` — User registration, authentication (JWT), username verification, and password reset. Accepts `AuthRequestDto` / `ResetPasswordRequestDto`. Registration also assigns the user's WebAuthn `userHandle`.
-- `PasskeyController.java` — WebAuthn passkey registration/login ceremonies and credential management (`/api/passkeys/**`).
-- `HomeController.java` — Default landing redirect to Swagger UI.
+- `EmployeeController.java` â€” REST endpoints for employee CRUD. Accepts `EmployeeRequestDto`, returns `EmployeeResponseDto`.
+- `DepartmentController.java` â€” REST endpoints for department CRUD. Accepts `DepartmentRequestDto`, returns `DepartmentResponseDto`. Rejects deleting departments that still have employees (409 Conflict).
+- `AuthController.java` â€” User registration, authentication (JWT), username verification, and password reset. Accepts `AuthRequestDto` / `ResetPasswordRequestDto`. Registration also assigns the user's WebAuthn `userHandle`.
+- `PasskeyController.java` â€” WebAuthn passkey registration/login ceremonies and credential management (`/api/passkeys/**`).
+- `HomeController.java` â€” Default landing redirect to Swagger UI.
 
 ### DTOs (`dto/`)
 
-- `EmployeeRequestDto.java` — Input validation for employee create/update (firstName, lastName, email, age, department.id)
-- `EmployeeResponseDto.java` — API response with nested `department: {id, name}`
-- `DepartmentRequestDto.java` — Input validation for department create/update (name)
-- `DepartmentResponseDto.java` — API response with `id`, `name`, `employeeCount`
-- `AuthRequestDto.java` — Input validation for login/register (username, password)
-- `ResetPasswordRequestDto.java` — Input validation for password reset (username, newPassword)
-- Passkey DTOs — `PasskeyDto`, `PasskeyCeremonyStartResponse`, and the registration/authentication/rename request bodies.
+- `EmployeeRequestDto.java` â€” Input validation for employee create/update (firstName, lastName, email, age, department.id)
+- `EmployeeResponseDto.java` â€” API response with nested `department: {id, name}`
+- `DepartmentRequestDto.java` â€” Input validation for department create/update (name)
+- `DepartmentResponseDto.java` â€” API response with `id`, `name`, `employeeCount`
+- `AuthRequestDto.java` â€” Input validation for login/register (username, password)
+- `ResetPasswordRequestDto.java` â€” Input validation for password reset (username, newPassword)
+- Passkey DTOs â€” `PasskeyDto`, `PasskeyCeremonyStartResponse`, and the registration/authentication/rename request bodies.
 
 ### Entities (`model/`)
 
-- `Department.java` and `Employee.java` — JPA entities with Bean Validation annotations.
-- `User.java` — Authentication principal entity (now with a stable `userHandle` for passkeys).
-- `WebAuthnCredential.java` — A registered passkey (credential id, COSE public key, signature counter, transports, AAGUID, backup flags, timestamps).
+- `Department.java` and `Employee.java` â€” JPA entities with Bean Validation annotations.
+- `User.java` â€” Authentication principal entity (now with a stable `userHandle` for passkeys).
+- `WebAuthnCredential.java` â€” A registered passkey (credential id, COSE public key, signature counter, transports, AAGUID, backup flags, timestamps).
 
 ### Exception Handling (`exception/`)
 
-- `GlobalExceptionHandler.java` — Centralized `@RestControllerAdvice` that handles validation errors, not found, data integrity violations, malformed JSON, auth errors, and a generic fallback. No stack traces leak to clients.
-- `ResourceNotFoundException.java` — Custom runtime exception for missing resources.
+- `GlobalExceptionHandler.java` â€” Centralized `@RestControllerAdvice` that handles validation errors, not found, data integrity violations, malformed JSON, auth errors, and a generic fallback. No stack traces leak to clients.
+- `ResourceNotFoundException.java` â€” Custom runtime exception for missing resources.
 
 ### Repositories, Services, Security, Config
 
-- `EmployeeRepository.java` — `LEFT JOIN FETCH` queries for eager department loading + `countByDepartmentId()`
-- `EmployeeService.java` — `@Transactional` save with `flush` + `refresh` for complete entity state
-- `DepartmentService.java` — CRUD + `countEmployeesInDepartment()` for safe deletion checks
-- `JwtTokenUtil.java` — JWT signing/verification with externalized `${JWT_SECRET}`
-- `JwtRequestFilter.java` — Graceful handling of invalid/expired tokens; registered once inside the Spring Security chain
-- `DataInitializer.java` — Idempotent seeding (skips if data exists)
-- `webauthn/` — Passkey support: `PasskeyService` (ceremony orchestration), `WebAuthnConfig` + `WebAuthnProperties` (relying-party setup), `JpaCredentialRepository` (Yubico `CredentialRepository` adapter), `WebAuthnCeremonyStore` (single-use, TTL-bound challenge state), `UserHandles`, and `PasskeyException`
+- `EmployeeRepository.java` â€” `LEFT JOIN FETCH` queries for eager department loading + `countByDepartmentId()`
+- `EmployeeService.java` â€” `@Transactional` save with `flush` + `refresh` for complete entity state
+- `DepartmentService.java` â€” CRUD + `countEmployeesInDepartment()` for safe deletion checks
+- `JwtTokenUtil.java` â€” JWT signing/verification with externalized `${JWT_SECRET}`
+- `JwtRequestFilter.java` â€” Graceful handling of invalid/expired tokens; registered once inside the Spring Security chain
+- `DataInitializer.java` â€” Idempotent seeding (skips if data exists)
+- `webauthn/` â€” Passkey support: `PasskeyService` (ceremony orchestration), `WebAuthnConfig` + `WebAuthnProperties` (relying-party setup), `JpaCredentialRepository` (Yubico `CredentialRepository` adapter), `WebAuthnCeremonyStore` (single-use, TTL-bound challenge state), `UserHandles`, and `PasskeyException`
 
 ### `application.properties`
 
@@ -311,6 +311,7 @@ For more information about this project, please refer to the comprehensive [docu
 
 ## Contact
 
-For any questions or issues, please contact [hoangson091104@gmail.com](mailto:hoangson091104@gmail.com).
+For any questions or issues, please contact [umair.ansari@example.com](mailto:umair.ansari@example.com).
 
 ---
+

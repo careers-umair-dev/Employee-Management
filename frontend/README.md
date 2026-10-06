@@ -1,8 +1,8 @@
-# Employee Management System - Frontend
+﻿# Employee Management System - Frontend
 
 ## Overview
 
-The Employee Management System frontend is a **React-based** application that provides a user interface for managing employee and department data. The app includes features for viewing, adding, editing, and deleting employees and departments. It also includes visualizations for employee metrics such as growth over time and distribution by age range, plus **passwordless sign-in with passkeys (WebAuthn)** and an Account → Passkeys page to manage them.
+The Employee Management System frontend is a **React-based** application that provides a user interface for managing employee and department data. The app includes features for viewing, adding, editing, and deleting employees and departments. It also includes visualizations for employee metrics such as growth over time and distribution by age range, plus **passwordless sign-in with passkeys (WebAuthn)** and an Account â†’ Passkeys page to manage them.
 
 ## File Structure
 
@@ -68,7 +68,7 @@ mindmap
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/hoangsonww/Employee-Management-Fullstack-App.git
+git clone https://github.com/UmairAnsari/Employee-Management-Fullstack-App.git
 cd Employee-Management/frontend
 ```
 
@@ -92,7 +92,7 @@ REACT_APP_API_BASE_URL=http://localhost:8080
 
 Make sure to replace the `REACT_APP_API_URL` with your backend server URL.
 
-> **Passkeys note:** WebAuthn requires a secure context — it works on `localhost` and over HTTPS, but not over plain HTTP on a remote host. The backend's `WEBAUTHN_RP_ID` must match the domain serving this frontend.
+> **Passkeys note:** WebAuthn requires a secure context â€” it works on `localhost` and over HTTPS, but not over plain HTTP on a remote host. The backend's `WEBAUTHN_RP_ID` must match the domain serving this frontend.
 
 ### 4. Start the Development Server
 
@@ -127,7 +127,7 @@ This will start the test runner and execute your test cases.
 Tests run on **Jest** + **React Testing Library** and live in `__tests__/`:
 
 - **Behavioral suites** exercise interactions on the core screens (Dashboard, Employee/Department lists, Login, Register, Profile, passkeys).
-- **Snapshot suites** (`__tests__/snapshots/`) lock in the rendered markup of **every screen** — Landing, the auth pages, the dashboard, the employee/department list & form pages, Profile, Passkeys, Not Found, Quick Actions, Navbar, and Footer — asserting each with `toMatchSnapshot()`.
+- **Snapshot suites** (`__tests__/snapshots/`) lock in the rendered markup of **every screen** â€” Landing, the auth pages, the dashboard, the employee/department list & form pages, Profile, Passkeys, Not Found, Quick Actions, Navbar, and Footer â€” asserting each with `toMatchSnapshot()`.
 
 The snapshots are made deterministic (3D hero + charts stubbed, `autoFocus` neutralized, `Date` frozen where rendered, services mocked) so they pass identically on local machines and CI regardless of timezone or when they run.
 
@@ -167,7 +167,7 @@ The navigation bar component that includes links to various pages such as Dashbo
 
 ### `Passkeys.js`
 
-The **Account → Passkeys** management page (`/passkeys`, protected). Lists the user's passkeys with device hints and badges, and supports adding, renaming, and deleting passkeys. Warns if the browser does not support WebAuthn.
+The **Account â†’ Passkeys** management page (`/passkeys`, protected). Lists the user's passkeys with device hints and badges, and supports adding, renaming, and deleting passkeys. Warns if the browser does not support WebAuthn.
 
 ### `PasskeyPromptDialog.js`
 
@@ -179,7 +179,7 @@ A styled in-app modal (no native `alert`/`prompt`) shown after sign-up that invi
 
 ### `services/passkeyService.js` & `utils/webauthn.js`
 
-`passkeyService.js` wraps the `/api/passkeys/**` API and exposes high-level `registerNewPasskey` / `loginWithPasskey` helpers. `utils/webauthn.js` handles base64url ⇆ ArrayBuffer conversion, the `navigator.credentials` ceremony drivers, capability checks, and friendly error messages.
+`passkeyService.js` wraps the `/api/passkeys/**` API and exposes high-level `registerNewPasskey` / `loginWithPasskey` helpers. `utils/webauthn.js` handles base64url â‡† ArrayBuffer conversion, the `navigator.credentials` ceremony drivers, capability checks, and friendly error messages.
 
 ## Troubleshooting
 
@@ -197,4 +197,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For any questions or issues, please contact [hoangson091104@gmail.com](mailto:hoangson091104@gmail.com).
+For any questions or issues, please contact [umair.ansari@example.com](mailto:umair.ansari@example.com).
+

@@ -1,4 +1,4 @@
-# Security Policy
+﻿# Security Policy
 
 _Last updated: May 16, 2025_
 
@@ -14,7 +14,7 @@ This document describes the security vulnerability disclosure process for the **
 | `1.0.x`   | YES       |
 | `< 1.0.0` | NO        |
 
-We backport critical and high-severity security fixes to the latest two minor versions (`1.1.x` and `1.0.x`) for at least 90 days after release. Older versions are no longer supported—users should upgrade to a supported release as soon as possible.
+We backport critical and high-severity security fixes to the latest two minor versions (`1.1.x` and `1.0.x`) for at least 90 days after release. Older versions are no longer supportedâ€”users should upgrade to a supported release as soon as possible.
 
 ---
 
@@ -25,7 +25,7 @@ If you discover a security issue in our code or infrastructure, please report it
 1. **Email**:
 
    ```text
-   hoangson091104@gmail.com
+   umair.ansari@example.com
    ```
 
 2. **PGP Key** (fingerprint):
@@ -57,7 +57,7 @@ Please **do not** open a public GitHub issue or discuss the issue publicly befor
 | Patch deployment (medium/low)    | Within 90 days          |
 | Public disclosure                | After patch is released |
 
-We’ll keep you updated throughout the process. If you do not hear back within 48 hours, feel free to send a reminder.
+Weâ€™ll keep you updated throughout the process. If you do not hear back within 48 hours, feel free to send a reminder.
 
 ---
 
@@ -70,7 +70,7 @@ We welcome and appreciate good-faith security research. As long as you:
 - Do not degrade the service for other users.
 - Promptly report any issues you find to us.
 
-—you will not face legal action from the Employee Management team.
+â€”you will not face legal action from the Employee Management team.
 
 ---
 
@@ -85,3 +85,4 @@ Thank you to all security researchers and contributors who help us keep our proj
 - [GitHub Security Advisories](https://docs.github.com/en/code-security/security-advisories)
 - [OWASP Top 10](https://owasp.org/www-project-top-ten/)
 - [Node.js Security Working Group](https://github.com/nodejs/security-wg)
+

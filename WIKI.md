@@ -1,4 +1,4 @@
-# Employee Management System - Wiki Documentation
+﻿# Employee Management System - Wiki Documentation
 
 ## Overview
 
@@ -8,11 +8,11 @@ This repository includes a comprehensive, professional wiki page (`index.html`) 
 
 ```
 Employee-Management/
-├── index.html              # Main wiki page
-├── packages/
-│   ├── script.js          # Interactive JavaScript functionality
-│   └── styles.css         # Professional styling and responsive design
-└── img/                   # Screenshots and assets
+â”œâ”€â”€ index.html              # Main wiki page
+â”œâ”€â”€ packages/
+â”‚   â”œâ”€â”€ script.js          # Interactive JavaScript functionality
+â”‚   â””â”€â”€ styles.css         # Professional styling and responsive design
+â””â”€â”€ img/                   # Screenshots and assets
 ```
 
 ## 🚀 How to Use
@@ -52,7 +52,7 @@ php -S localhost:8000
 ### Option 3: Deploy to GitHub Pages
 
 1. Push the repository to GitHub
-2. Go to repository Settings → Pages
+2. Go to repository Settings â†’ Pages
 3. Select branch and `/` (root) as source
 4. The wiki will be available at: `https://yourusername.github.io/Employee-Management/`
 
@@ -129,13 +129,13 @@ The wiki uses a modern, professional color palette:
 --gradient-hero: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)
 ```
 
-## 📱 Responsive Breakpoints
+## ðŸ“± Responsive Breakpoints
 
 - **Desktop**: 1024px and above
 - **Tablet**: 768px - 1023px
 - **Mobile**: Below 768px
 
-## 🔧 Dependencies
+## ðŸ”§ Dependencies
 
 The wiki page uses minimal external dependencies:
 
@@ -144,15 +144,15 @@ The wiki page uses minimal external dependencies:
 - No Node.js dependencies
 - Pure HTML, CSS, and vanilla JavaScript
 
-## 🌐 Browser Support
+## ðŸŒ Browser Support
 
-- ✅ Chrome (latest)
-- ✅ Firefox (latest)
-- ✅ Safari (latest)
-- ✅ Edge (latest)
-- ✅ Mobile browsers
+- âœ… Chrome (latest)
+- âœ… Firefox (latest)
+- âœ… Safari (latest)
+- âœ… Edge (latest)
+- âœ… Mobile browsers
 
-## 📊 Mermaid Diagrams
+## ðŸ“Š Mermaid Diagrams
 
 The wiki includes several Mermaid diagrams:
 
@@ -164,7 +164,7 @@ The wiki includes several Mermaid diagrams:
 
 Mermaid diagrams are automatically rendered on page load.
 
-## 🚀 Performance
+## ðŸš€ Performance
 
 The wiki is optimized for performance:
 
@@ -175,19 +175,19 @@ The wiki is optimized for performance:
 - Optimized animations
 - Code splitting ready
 
-## 🎯 Best Practices
+## ðŸŽ¯ Best Practices
 
 The wiki follows modern web development best practices:
 
-- ✅ Semantic HTML5
-- ✅ Accessible markup (ARIA labels, focus states)
-- ✅ Mobile-first responsive design
-- ✅ Progressive enhancement
-- ✅ Performance optimized
-- ✅ SEO friendly meta tags
-- ✅ Print-friendly styles
+- âœ… Semantic HTML5
+- âœ… Accessible markup (ARIA labels, focus states)
+- âœ… Mobile-first responsive design
+- âœ… Progressive enhancement
+- âœ… Performance optimized
+- âœ… SEO friendly meta tags
+- âœ… Print-friendly styles
 
-## 📝 Content Sections
+## ðŸ“ Content Sections
 
 1. **Header** - Logo, title, navigation
 2. **Hero** - Project overview with stats
@@ -204,17 +204,17 @@ The wiki follows modern web development best practices:
 13. **Contributing** - Contribution guidelines
 14. **Footer** - Links and credits
 
-## 🔍 SEO Optimization
+## ðŸ” SEO Optimization
 
 The page includes SEO meta tags:
 
 ```html
 <meta name="description" content="Employee Management Full-Stack Application...">
 <meta name="keywords" content="Employee Management, Spring Boot, React...">
-<meta name="author" content="Son Nguyen">
+<meta name="author" content="Umair Ansari">
 ```
 
-## 🎨 Animations
+## ðŸŽ¨ Animations
 
 Available animations:
 - `fadeIn` - Simple fade in
@@ -224,7 +224,7 @@ Available animations:
 - Smooth scroll behavior
 - Counter animations for statistics
 
-## 📱 Mobile Optimization
+## ðŸ“± Mobile Optimization
 
 Mobile-specific optimizations:
 - Touch-friendly buttons (44px minimum)
@@ -233,7 +233,7 @@ Mobile-specific optimizations:
 - Optimized images
 - Fast loading times
 
-## 🛡️ Security
+## ðŸ›¡ï¸ Security
 
 Security considerations:
 - No sensitive data in frontend
@@ -242,7 +242,7 @@ Security considerations:
 - Content Security Policy ready
 - XSS protection
 
-## 🔄 Updates
+## ðŸ”„ Updates
 
 To update the wiki:
 
@@ -252,14 +252,14 @@ To update the wiki:
 4. Test in multiple browsers
 5. Commit and push changes
 
-## 📚 Additional Resources
+## ðŸ“š Additional Resources
 
 - [README.md](README.md) - Main project documentation
 - [ARCHITECTURE.md](ARCHITECTURE.md) - Detailed architecture
 - [DEPLOYMENT.md](DEPLOYMENT.md) - Deployment guide
 - [kubernetes/DEPLOYMENT-GUIDE.md](kubernetes/DEPLOYMENT-GUIDE.md) - K8s deployment
 
-## 🤝 Contributing
+## ðŸ¤ Contributing
 
 To contribute to the wiki:
 
@@ -269,14 +269,13 @@ To contribute to the wiki:
 4. Test thoroughly
 5. Submit a pull request
 
-## 📄 License
 
-This wiki page is part of the Employee Management System project and is licensed under the MIT License.
+## ðŸ‘¨â€ðŸ’» Author
 
-## 👨‍💻 Author
-
-Created with ❤️ by [Son Nguyen](https://github.com/hoangsonww)
+Created with ❤️ by Umair Ansari (https://github.com/UmairAnsari)
 
 ---
 
 **Note**: This wiki page is designed to be a comprehensive, standalone documentation portal that can replace or complement the README.md file. It provides a more interactive and visually appealing way to explore the project.
+
+

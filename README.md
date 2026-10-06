@@ -1,4 +1,4 @@
-# Employee Management Full-Stack Application
+﻿# Employee Management Full-Stack Application
 
 The **Employee Management Full-Stack Application** is a modern, feature-rich system for managing employee and department data, built to demonstrate the power of combining traditional enterprise technologies with modern web frameworks. It leverages a responsive React frontend alongside a robust Spring Boot backend, delivering a seamless user experience with features such as CRUD operations, data visualization, authentication, and secure REST APIs. 
 
@@ -117,7 +117,7 @@ The Employee Management System is a dynamic full-stack application that seamless
 ## Architecture at a Glance
 
 - React SPA (Material UI, Tailwind CSS, Chart.js) consumes the Spring Boot REST API over HTTPS via Axios.
-- Spring Boot layers (controller → service → repository) persist to MySQL through Spring Data JPA and seed demo data with Faker-powered `DataInitializer`.
+- Spring Boot layers (controller â†’ service â†’ repository) persist to MySQL through Spring Data JPA and seed demo data with Faker-powered `DataInitializer`.
 - Production-ready deployment with Docker containers, Kubernetes orchestration (blue-green & canary strategies), Terraform infrastructure-as-code, and comprehensive Jenkins CI/CD pipeline with automated testing, security scanning, and multi-strategy deployments.
 
 ### System Context
@@ -170,7 +170,7 @@ flowchart LR
     Jenkins[Jenkins Pipeline\n`npm install` + `npm run build`]
     Makefile[Makefile & scripts\nDocker/k8s helpers]
     Images[Docker Images\nfrontend & backend]
-    Infra[Terraform AWS Stack\nEKS · RDS · ECR]
+    Infra[Terraform AWS Stack\nEKS Â· RDS Â· ECR]
     Cluster[EKS/Kubernetes Deployment]
 
     Dev --> Jenkins
@@ -441,7 +441,7 @@ Ensure that you have Java 11 installed on your local machine. If not, follow the
 ### 2. Clone the Repository
 
 ```bash
-git clone https://github.com/hoangsonww/Employee-Management-Fullstack-App.git
+git clone https://github.com/UmairAnsari/Employee-Management-Fullstack-App.git
 cd Employee-Management-Fullstack-App  # Fix the paths if necessary
 cd backend
 ```
@@ -478,7 +478,7 @@ MONGO_URI=mongodb://localhost:27017/employee_management
 # JWT Secret (required - generate with: openssl rand -base64 32)
 JWT_SECRET=your-secret-key-here
 
-# Passkeys / WebAuthn — rp-id MUST match the domain the FRONTEND is served from (no scheme/port).
+# Passkeys / WebAuthn â€” rp-id MUST match the domain the FRONTEND is served from (no scheme/port).
 # Defaults target local development; set these for production.
 WEBAUTHN_RP_ID=localhost
 WEBAUTHN_RP_NAME=Employee Management System
@@ -615,7 +615,7 @@ Feel free to add more tests as needed to ensure the reliability and correctness 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/hoangsonww/Employee-Management-Fullstack-App.git
+git clone https://github.com/UmairAnsari/Employee-Management-Fullstack-App.git
 cd Employee-Management-Fullstack-App  # Fix the paths if necessary
 cd frontend
 ```
@@ -664,7 +664,7 @@ To run tests for the frontend application, use the following command:
 npm test
 ```
 
-The frontend uses **Jest** + **React Testing Library**. Alongside the behavioral suites, every screen has a **snapshot test** under `frontend/__tests__/snapshots/` (one file per screen — Landing, Login, Register, Reset Password, Verify Username, Dashboard, Employee List/Form, Department List/Form, New Department, Profile, Passkeys, Not Found, Quick Actions, Navbar, Footer). Each renders the component with the providers it needs (router, mocked services) and asserts the rendered markup with `toMatchSnapshot()`, so unintended UI changes surface as a diff. The snapshots are deterministic — the 3D hero and charts are stubbed, `autoFocus` is neutralized, `Date` is frozen where rendered, and data fetches are mocked — so they pass identically on local machines and CI regardless of timezone or run time.
+The frontend uses **Jest** + **React Testing Library**. Alongside the behavioral suites, every screen has a **snapshot test** under `frontend/__tests__/snapshots/` (one file per screen â€” Landing, Login, Register, Reset Password, Verify Username, Dashboard, Employee List/Form, Department List/Form, New Department, Profile, Passkeys, Not Found, Quick Actions, Navbar, Footer). Each renders the component with the providers it needs (router, mocked services) and asserts the rendered markup with `toMatchSnapshot()`, so unintended UI changes surface as a diff. The snapshots are deterministic â€” the 3D hero and charts are stubbed, `autoFocus` is neutralized, `Date` is frozen where rendered, and data fetches are mocked â€” so they pass identically on local machines and CI regardless of timezone or run time.
 
 ```bash
 # Run only the snapshot suites
@@ -733,7 +733,7 @@ docker push <your_docker_username>/employee-management-app-backend
 docker push <your_docker_username>/employee-management-app-frontend
 ```
 
-Additionally, you can access the image on **Docker Hub** **[here](https://hub.docker.com/repository/docker/hoangsonw/employee-management-app/).**
+Additionally, you can access the image on **Docker Hub** **[here](https://hub.docker.com/repository/docker/UmairAnsari/employee-management-app/).**
 
 ```mermaid
 flowchart LR
@@ -744,7 +744,7 @@ flowchart LR
     Compose --> BackendCtr[Container: backend]
     Compose --> FrontendCtr[Container: frontend]
     BackendCtr -->|REST 8080| DB[(MySQL Service)]
-    FrontendCtr -->|HTTP 3000→backend| BackendCtr
+    FrontendCtr -->|HTTP 3000â†’backend| BackendCtr
 ```
 
 ## Kubernetes
@@ -755,7 +755,7 @@ The project includes production-ready Kubernetes manifests with support for adva
 
 - **Rolling Deployment**: Gradual zero-downtime updates with automatic rollback
 - **Blue-Green Deployment**: Complete environment switch for instant rollback capability
-- **Canary Deployment**: Gradual traffic shift to validate new versions (10% → 100%)
+- **Canary Deployment**: Gradual traffic shift to validate new versions (10% â†’ 100%)
 
 ### Production Features
 
@@ -844,7 +844,7 @@ flowchart LR
     Jenkins[Jenkins Pipeline\n`npm install` + `npm run build`]
     Makefile[Makefile & scripts\nDocker/k8s helpers]
     Images[Docker Images\nfrontend & backend]
-    Infra[Terraform AWS Stack\nEKS · RDS · ECR]
+    Infra[Terraform AWS Stack\nEKS Â· RDS Â· ECR]
     Cluster[EKS/Kubernetes Deployment]
 
     Dev --> Jenkins
@@ -952,7 +952,7 @@ flowchart LR
 
 2. **Test the API**
 - Import `openapi.yaml` into [Postman](https://www.postman.com/):
-  - Open Postman → Import → Select `openapi.yaml`.
+  - Open Postman â†’ Import â†’ Select `openapi.yaml`.
   - Test the API endpoints directly from Postman.
 - Or use [Swagger UI](https://swagger.io/tools/swagger-ui/):
   - Provide the file URL or upload it to view and test endpoints.
@@ -1041,14 +1041,16 @@ This project is licensed under the **MIT License.** See the [LICENSE](LICENSE) f
 
 ## Contact
 
-For any questions or issues, please contact [hoangson091104@gmail.com](mailto:hoangson091104@gmail.com).
+For any questions or issues, please contact [umair.ansari@example.com](mailto:umair.ansari@example.com).
 
 ---
 
 Thank you for checking out the **Employee Management Full-Stack Application!** Feel free to use this project for your own learning or development purposes.
 
-Created with ❤️ by [Son Nguyen](https://github.com/hoangsonww) in 2024.
+Created with ❤️ by [Umair Ansari](https://github.com/UmairAnsari) in 2024.
 
 ---
 
-**[⬆ Back to Top](#employee-management-full-stack-application)**
+**[↑ Back to Top](#employee-management-full-stack-application)**
+
+

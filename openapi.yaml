@@ -1,11 +1,11 @@
-openapi: 3.0.0
+﻿openapi: 3.0.0
 info:
   title: Employee Management System API
   version: 1.0.0
   description: API documentation for managing employees and departments - built with Java Spring Boot and MongoDB
   contact:
-    name: Son Nguyen
-    email: hoangson091104@gmail.com
+    name: Umair Ansari
+    email: umair.ansari@example.com
   license:
     name: MIT License
 servers:
@@ -382,7 +382,7 @@ paths:
   /api/passkeys/authenticate/start:
     post:
       summary: Start passkey login
-      description: Begins a WebAuthn assertion ceremony. Public endpoint — provide a username to scope the ceremony, or omit the body for a username-less (discoverable credential) login.
+      description: Begins a WebAuthn assertion ceremony. Public endpoint â€” provide a username to scope the ceremony, or omit the body for a username-less (discoverable credential) login.
       tags:
         - Passkeys
       requestBody:
@@ -538,3 +538,4 @@ components:
         credential:
           type: object
           description: The PublicKeyCredential JSON produced by navigator.credentials.get().
+

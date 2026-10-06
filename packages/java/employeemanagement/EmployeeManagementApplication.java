@@ -29,8 +29,8 @@ import org.springframework.context.annotation.Bean;
             description = "API documentation for managing employees and departments",
             contact =
                 @Contact(
-                    name = "Employee Management System",
-                    email = "hoangson091104@gmail.com",
+                    name = "Umair Ansari",
+                    email = "umair.ansari@example.com",
                     url = "https://employee-manage-app.vercel.app/"),
             license = @License(name = "MIT License", url = "https://opensource.org/licenses/MIT"),
             termsOfService = "https://employee-manage-app.vercel.app/"))

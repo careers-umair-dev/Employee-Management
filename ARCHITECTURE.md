@@ -1,4 +1,4 @@
-# Employee Management System Architecture
+﻿# Employee Management System Architecture
 
 This document captures the current architecture of the Employee Management System so that contributors and operators can understand how the solution is structured today, which guarantees are already implemented, and where further hardening is required. The description below is based solely on the source code and infrastructure assets that live in this repository.
 
@@ -25,7 +25,7 @@ This document captures the current architecture of the Employee Management Syste
 - `Dashboard.js` combines live API data with static samples to render Chart.js bar/line/pie charts for metrics such as employee count, age distribution, and growth trends.
 - CRUD components (`EmployeeList.js`, `EmployeeForm.js`, `DepartmentList.js`, `DepartmentForm.js`, `NewDepartmentForm.js`) share a consistent pattern: fetch data on mount, expose form interactions, and invoke service helpers for persistence.
 - Authentication-related components (`Login.js`, `Register.js`, `ResetPassword.js`, `VerifyUsername.js`) render forms and persist the JWT via `authService`. `Login.js` also offers "Sign in with a passkey", and `Register.js` auto-signs-in after sign-up then shows a passkey-setup modal.
-- Passkey components: `Passkeys.js` (the `/passkeys` management page — add/rename/delete) and `PasskeyPromptDialog.js` (the post-sign-up modal). The `Navbar` exposes them via an **Account** dropdown (Passkeys + Log Out).
+- Passkey components: `Passkeys.js` (the `/passkeys` management page â€” add/rename/delete) and `PasskeyPromptDialog.js` (the post-sign-up modal). The `Navbar` exposes them via an **Account** dropdown (Passkeys + Log Out).
 
 ```mermaid
 flowchart LR
@@ -51,8 +51,8 @@ flowchart LR
 
 ### 2.3 Data access layer
 
-- Network calls are centralized in `src/services/employeeService.js`, `src/services/departmentService.js`, and `src/services/passkeyService.js`. They use Axios and point to the Render-hosted backend (`https://employee-management-app-gdm5.onrender.com/...`); `passkeyService.js` honours an optional `REACT_APP_API_BASE_URL` override and attaches the JWT to management calls. `src/utils/webauthn.js` provides base64url ⇆ ArrayBuffer conversion and the `navigator.credentials` ceremony drivers.
-- For local development the README instructs developers to override the base URL via `.env` (`REACT_APP_API_URL`), though conditional switching logic is not present in code—contributors must update the service files or provide proxy settings when pointing to a different backend.
+- Network calls are centralized in `src/services/employeeService.js`, `src/services/departmentService.js`, and `src/services/passkeyService.js`. They use Axios and point to the Render-hosted backend (`https://employee-management-app-gdm5.onrender.com/...`); `passkeyService.js` honours an optional `REACT_APP_API_BASE_URL` override and attaches the JWT to management calls. `src/utils/webauthn.js` provides base64url â‡† ArrayBuffer conversion and the `navigator.credentials` ceremony drivers.
+- For local development the README instructs developers to override the base URL via `.env` (`REACT_APP_API_URL`), though conditional switching logic is not present in codeâ€”contributors must update the service files or provide proxy settings when pointing to a different backend.
 
 ### 2.4 Styling and UX
 
@@ -79,7 +79,7 @@ flowchart LR
 
 - Entities (`model/`):
   - `Employee` links to `Department` via `@ManyToOne` with eager fetch. Fields are validated with Bean Validation annotations (`@NotBlank`, `@Email`, `@Min`, `@Max`, `@NotNull`).
-  - `Department` maintains a `@OneToMany` collection of `Employee` instances with `CascadeType.PERSIST` and `CascadeType.MERGE` (no cascade delete — departments with employees cannot be deleted).
+  - `Department` maintains a `@OneToMany` collection of `Employee` instances with `CascadeType.PERSIST` and `CascadeType.MERGE` (no cascade delete â€” departments with employees cannot be deleted).
   - `User` represents authentication principals stored in a `users` table. Each user also has a stable, opaque `userHandle` used by passkeys in place of the username.
   - `WebAuthnCredential` represents a registered passkey stored in `webauthn_credentials` (credential id, COSE public key, signature counter, transports, AAGUID, backup flags, timestamps) with a `@ManyToOne` link to `User`.
 - Repositories (`repository/`):
@@ -93,16 +93,16 @@ flowchart LR
 
 The API uses a dedicated DTO (Data Transfer Object) layer to decouple internal JPA entities from the API contract:
 
-- **Request DTOs** — define the shape and validation rules for incoming requests:
+- **Request DTOs** â€” define the shape and validation rules for incoming requests:
   - `EmployeeRequestDto`: validated fields (`firstName`, `lastName`, `email`, `age`, `department.id`)
   - `DepartmentRequestDto`: validated `name` field
   - `AuthRequestDto`: validated `username` and `password` for login/register
   - `ResetPasswordRequestDto`: validated `username` and `newPassword`
   - Passkey DTOs: `PasskeyRegistrationFinishRequest`, `PasskeyAuthenticationStartRequest`, `PasskeyAuthenticationFinishRequest`, `PasskeyRenameRequest`
-- **Response DTOs** — define the shape of API responses, preventing entity internals from leaking:
+- **Response DTOs** â€” define the shape of API responses, preventing entity internals from leaking:
   - `EmployeeResponseDto`: includes a nested `department` object with `id` and `name` (avoids circular serialization issues between Employee and Department entities)
   - `DepartmentResponseDto`: returns `id`, `name`, and `employeeCount` (integer) instead of serializing the full employee list
-  - `PasskeyDto` (safe passkey summary — never exposes key material) and `PasskeyCeremonyStartResponse` (flow id + browser-ready options)
+  - `PasskeyDto` (safe passkey summary â€” never exposes key material) and `PasskeyCeremonyStartResponse` (flow id + browser-ready options)
 
 Controllers convert between entities and DTOs using private `convertToDto()` and `convertToEntity()` methods.
 
@@ -149,7 +149,7 @@ sequenceDiagram
 - `application.properties` imports an optional `config.properties` file, enabling secrets and connection strings to be defined outside version control. By default the application expects MySQL and MongoDB credentials through environment variables.
 - `CorsConfig` registers a permissive CORS policy allowing any origin, headers, credentials, and the `GET/POST/PUT/PATCH/DELETE/OPTIONS` methods.
 - WebAuthn relying-party settings are externalised under `webauthn.*` (`WEBAUTHN_RP_ID`, `WEBAUTHN_RP_NAME`, `WEBAUTHN_ALLOWED_ORIGINS`, plus optional `WEBAUTHN_ALLOW_ORIGIN_PORT` / `WEBAUTHN_CEREMONY_TIMEOUT_SECONDS`).
-- `config.properties` in the repo contains sample managed service credentials. Treat these values as placeholders—they should be rotated before real deployments.
+- `config.properties` in the repo contains sample managed service credentials. Treat these values as placeholdersâ€”they should be rotated before real deployments.
 
 ### 3.6 Security posture
 
@@ -174,7 +174,7 @@ sequenceDiagram
 - **Primary datastore**: MySQL (`employees`, `departments`, `users`). Hibernate `ddl-auto=update` evolves the schema at runtime, which is convenient for demos but risky for production.
 - **Schema artifacts**: The repo now includes a root [data.sql](data.sql) all-in-one bootstrap plus split MySQL setup scripts under [backend/sql](backend/sql/README.md) for database creation, table DDL, and optional performance indexing.
 - **Secondary datastore**: MongoDB connection string is configurable (`spring.data.mongodb.uri`) but no repository currently consumes it. Future Mongo use would require additional Spring Data Mongo repositories.
-- **Seed data**: `DataInitializer` recreates data on every application start (see §3.2). Remove or guard this behavior before deploying to persistent environments.
+- **Seed data**: `DataInitializer` recreates data on every application start (see Â§3.2). Remove or guard this behavior before deploying to persistent environments.
 - **OpenAPI contract**: `openapi.yaml` at the repo root enumerates the REST API and aligns with the annotated controllers.
 
 Bootstrap behavior:
@@ -256,9 +256,9 @@ flowchart LR
 
 - **Authentication & authorization**: `JwtRequestFilter` is registered in the Spring Security chain. Passkey-management routes require a valid JWT; passkey login and the pre-existing employee/department endpoints remain public by design. Further hardening (protecting the employee/department endpoints with request matchers or `@PreAuthorize`) is still recommended for production.
 - **Passkeys (WebAuthn/FIDO2)**: phishing-resistant, passwordless sign-in. Only public keys are stored; challenges are single-use with a short TTL; the relying party validates origin/RP-ID and the signature counter. Configure `WEBAUTHN_RP_ID` / `WEBAUTHN_ALLOWED_ORIGINS` per environment (must match the frontend's HTTPS origin; localhost is exempt from the HTTPS requirement).
-- **Secrets management**: Replace the checked-in credentials in `backend/config.properties` with environment-specific secrets (AWS Secrets Manager, SSM Parameter Store, or Kubernetes Secrets) before production deployment. The JWT signing secret must be provided via the `JWT_SECRET` environment variable — the application will fail to start without it.
+- **Secrets management**: Replace the checked-in credentials in `backend/config.properties` with environment-specific secrets (AWS Secrets Manager, SSM Parameter Store, or Kubernetes Secrets) before production deployment. The JWT signing secret must be provided via the `JWT_SECRET` environment variable â€” the application will fail to start without it.
 - **Database migrations**: Switching from Hibernate `ddl-auto=update` to an explicit migration tool (Flyway/Liquibase) is recommended to control schema evolution.
-- **Data seeding**: `DataInitializer` is now idempotent — it only seeds when the database is empty. Safe for production restarts.
+- **Data seeding**: `DataInitializer` is now idempotent â€” it only seeds when the database is empty. Safe for production restarts.
 - **CORS**: Current configuration allows all origins and credentials. Introduce an allowlist when hosting in production.
 
 ```mermaid
@@ -312,5 +312,6 @@ flowchart TD
 ---
 
 **Document version**: 2026-03-27
-**Author**: Son Nguyen
+**Author**: Umair Ansari
 **Version**: 2.0.0
+

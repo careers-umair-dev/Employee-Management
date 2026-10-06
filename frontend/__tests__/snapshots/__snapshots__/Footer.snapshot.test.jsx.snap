@@ -100,9 +100,9 @@ exports[`Footer snapshot matches the rendered markup 1`] = `
             Project Maintainer: 
             <a
               class="MuiTypography-root MuiTypography-inherit  MuiLink-root MuiLink-underlineAlways  css-1hun5y9-MuiTypography-root-MuiLink-root"
-              href="https://github.com/hoangsonww"
+              href="https://github.com/UmairAnsari"
             >
-              Son Nguyen
+              Umair Ansari
             </a>
           </p>
           <p
@@ -111,9 +111,9 @@ exports[`Footer snapshot matches the rendered markup 1`] = `
             Email: 
             <a
               class="MuiTypography-root MuiTypography-inherit  MuiLink-root MuiLink-underlineAlways  css-1hun5y9-MuiTypography-root-MuiLink-root"
-              href="mailto:hoangson091104@gmail.com"
+              href="mailto:umair.ansari@example.com"
             >
-              hoangson091104@gmail.com
+              umair.ansari@example.com
             </a>
           </p>
           <p

@@ -1,4 +1,4 @@
-cff-version: 1.2.0
+﻿cff-version: 1.2.0
 message: "If you use this software, please cite it using the metadata from this file."
 title: "Employee Management Full-Stack Application"
 abstract: >-
@@ -10,13 +10,13 @@ abstract: >-
   and ships with CI/CD pipelines supporting blue/green and canary deployments.
 type: software
 authors:
-  - family-names: "Nguyen"
-    given-names: "Son"
-    alias: "hoangsonww"
-    email: "hoangson091104@gmail.com"
-    website: "https://github.com/hoangsonww"
-repository-code: "https://github.com/hoangsonww/Employee-Management-Fullstack-App"
-url: "https://github.com/hoangsonww/Employee-Management-Fullstack-App"
+  - family-names: "Ansari"
+    given-names: "Umair"
+    alias: "UmairAnsari"
+    email: "umair.ansari@example.com"
+    website: "https://github.com/UmairAnsari"
+repository-code: "https://github.com/UmairAnsari/Employee-Management-Fullstack-App"
+url: "https://github.com/UmairAnsari/Employee-Management-Fullstack-App"
 version: "2.3.4"
 date-released: "2025-05-19"
 license: MIT
@@ -31,3 +31,4 @@ keywords:
   - "Docker"
   - "Kubernetes"
   - "CI/CD"
+
