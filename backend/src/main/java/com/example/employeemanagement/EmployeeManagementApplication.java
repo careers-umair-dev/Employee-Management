@@ -1,4 +1,4 @@
-﻿package com.example.employeemanagement;
+package com.example.employeemanagement;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
