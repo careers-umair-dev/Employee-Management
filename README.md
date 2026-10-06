@@ -1035,19 +1035,15 @@ This guide enables you to view, test, and utilize the API. Feel free to explore 
 
 If you'd like to contribute to the project, please fork the repository and submit a pull request with your changes. Ensure that you follow the project's coding standards and include relevant tests for new features.
 
-## License
-
-This project is licensed under the **MIT License.** See the [LICENSE](LICENSE) file for details.
-
 ## Contact
 
-For any questions or issues, please contact [umair.ansari@example.com](mailto:umair.ansari@example.com).
+For any questions or issues, please contact [careers.umair@gmail.com](mailto:umair.ansari@example.com).
 
 ---
 
 Thank you for checking out the **Employee Management Full-Stack Application!** Feel free to use this project for your own learning or development purposes.
 
-Created with ❤️ by [Umair Ansari](https://github.com/UmairAnsari) in 2024.
+Created with ❤️ by [Umair Ansari](https://github.com/careers-umair-dev) in 2026.
 
 ---
 
