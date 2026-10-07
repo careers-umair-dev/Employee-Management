@@ -87,19 +87,19 @@ const Footer = () => {
             </Typography>
             <Typography variant="body2">
               Project Maintainer:{' '}
-              <Link href="https://github.com/UmairAnsari" color="inherit" sx={{ textDecoration: 'underline', '&:hover': { color: '#f57c00' } }}>
+              <Link href="https://github.com/careers-umair-dev" color="inherit" sx={{ textDecoration: 'underline', '&:hover': { color: '#f57c00' } }}>
                 Umair Ansari
               </Link>
             </Typography>
             <Typography variant="body2">
               Email:{' '}
-              <Link href="mailto:umair.ansari@example.com" color="inherit" sx={{ textDecoration: 'underline', '&:hover': { color: '#f57c00' } }}>
-                umair.ansari@example.com
+              <Link href="mailto:careers.umair@gmail.com" color="inherit" sx={{ textDecoration: 'underline', '&:hover': { color: '#f57c00' } }}>
+                careers.umair@gmail.com
               </Link>
             </Typography>
-            <Typography variant="body2">Phone: +1 (123) 456-7890</Typography>
+            <Typography variant="body2">Phone: +923241846077</Typography>
             <Typography variant="body2" sx={{ marginTop: '0.5rem' }}>
-              Address: 123 Employee St, Suite 100, New York, NY 10001
+              Address: Faisalabad, Punjab, Pakistan
             </Typography>
           </Grid>
         </Grid>

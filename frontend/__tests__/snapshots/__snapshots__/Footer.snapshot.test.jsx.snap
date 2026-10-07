@@ -100,7 +100,7 @@ exports[`Footer snapshot matches the rendered markup 1`] = `
             Project Maintainer: 
             <a
               class="MuiTypography-root MuiTypography-inherit  MuiLink-root MuiLink-underlineAlways  css-1hun5y9-MuiTypography-root-MuiLink-root"
-              href="https://github.com/UmairAnsari"
+              href="https://github.com/careers-umair-dev"
             >
               Umair Ansari
             </a>
@@ -111,20 +111,20 @@ exports[`Footer snapshot matches the rendered markup 1`] = `
             Email: 
             <a
               class="MuiTypography-root MuiTypography-inherit  MuiLink-root MuiLink-underlineAlways  css-1hun5y9-MuiTypography-root-MuiLink-root"
-              href="mailto:umair.ansari@example.com"
+              href="mailto:careers.umair@gmail.com"
             >
-              umair.ansari@example.com
+              careers.umair@gmail.com
             </a>
           </p>
           <p
             class="MuiTypography-root MuiTypography-body2  css-1nmqws6-MuiTypography-root"
           >
-            Phone: +1 (123) 456-7890
+            Phone: +923241846077
           </p>
           <p
             class="MuiTypography-root MuiTypography-body2  css-1c1tih0-MuiTypography-root"
           >
-            Address: 123 Employee St, Suite 100, New York, NY 10001
+            Address: Faisalabad, Punjab, Pakistan
           </p>
         </div>
       </div>
