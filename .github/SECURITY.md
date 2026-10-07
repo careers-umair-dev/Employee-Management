@@ -1,4 +1,4 @@
-﻿# Security Policy
+# Security Policy
 
 _Last updated: May 16, 2025_
 

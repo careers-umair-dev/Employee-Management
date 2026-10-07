@@ -1,4 +1,4 @@
-﻿# Employee Management Full-Stack Application
+# Employee Management Full-Stack Application
 
 The **Employee Management Full-Stack Application** is a modern, feature-rich system for managing employee and department data, built to demonstrate the power of combining traditional enterprise technologies with modern web frameworks. It leverages a responsive React frontend alongside a robust Spring Boot backend, delivering a seamless user experience with features such as CRUD operations, data visualization, authentication, and secure REST APIs. 
 

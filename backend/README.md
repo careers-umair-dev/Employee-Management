@@ -1,4 +1,4 @@
-﻿# Employee Management System - Backend
+# Employee Management System - Backend
 
 ## Overview
 

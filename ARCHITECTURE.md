@@ -1,4 +1,4 @@
-﻿# Employee Management System Architecture
+# Employee Management System Architecture
 
 This document captures the current architecture of the Employee Management System so that contributors and operators can understand how the solution is structured today, which guarantees are already implemented, and where further hardening is required. The description below is based solely on the source code and infrastructure assets that live in this repository.
 

@@ -1,4 +1,4 @@
-﻿# Employee Management System - Wiki Documentation
+# Employee Management System - Wiki Documentation
 
 ## Overview
 
